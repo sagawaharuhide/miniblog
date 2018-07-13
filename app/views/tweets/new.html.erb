@@ -1,0 +1,9 @@
+<div class="contents row">
+  <%= form_for @tweet, url: tweets_path do |f| %>
+    <h3>
+      投稿する
+    </h3>
+      <%= f.text_field :text  %>
+    <%= f.submit "SENT" %>
+  <% end %>
+</div>

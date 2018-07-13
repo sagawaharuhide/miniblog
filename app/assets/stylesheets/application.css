@@ -1,0 +1,30 @@
+.contents {
+  text-align: center;
+}
+
+.row {
+  margin-top: 25px !important;
+  margin-bottom: 30px
+}
+.row .col.m5 {
+  margin-left: 350px;
+  background-color: gray;
+}
+.col.s12.m5 {
+  text-align: center;
+}
+
+
+
+.teal {
+  background-color: #EEEEEE !important;
+}
+
+.pagination {
+  background-color: #26a69a;
+}
+
+
+footer {
+  text-align: center;
+}

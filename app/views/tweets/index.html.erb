@@ -1,0 +1,33 @@
+<div class="contents row" >
+
+
+
+  <% @tweets.each do |tweet| %>
+<div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel teal">
+          <span class="black-text"><%= tweet.text %><br>
+          </span>
+          <% if user_signed_in? && current_user.id == tweet.user.id %>
+
+          <div class="more">
+          <ul class="more_list">
+
+            <li>
+              <%= button_to '編集', "/tweets/#{tweet.id}/edit", method: :get, :style=>"color:#26a69a;" %>
+            </li>
+
+            <li>
+              <%= button_to '削除', "/tweets/#{tweet.id}", method: :delete, :style=>"color:#26a69a;" %>
+            </li>
+          </ul>
+        </div>
+
+  <% end %>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+<%= paginate(@tweets) %>
+</div>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sample</title>
+  <style type="text/css" href="./style.css"></style>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+
+<nav class="#26a69a teal lighten-1">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">blog</a>
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+        <% if user_signed_in? %>
+
+        <li><a href="badges.html">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </a></li>
+
+        <li><a href="sass.html">
+          <a class="post" href="/tweets/new">投稿する</a>
+        </a></li>
+
+        <% else %>
+
+        <li><a href="sass.html">
+          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+        </a></li>
+
+        <li><a href="badges.html">
+          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        </a></li>
+
+        <% end %>
+
+      </ul>
+
+
+
+    </div>
+  </nav>
+
+<%= yield %>
+
+<script type="text/javascript" src="./app.js"></script>
+
+<footer>
+      <p>
+        Copyright miniblog 2018.
+      </p>
+    </footer>
+
+</body>
+</html>
